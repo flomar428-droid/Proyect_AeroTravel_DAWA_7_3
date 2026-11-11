@@ -1,0 +1,108 @@
+<!-- ================= CABECERA (COMPARTIDA) ================= -->
+<header class="navbar">
+  <div class="logo-container" (click)="cambiarVista('inicio')">
+    <!-- Isotípo 'A' integrado como la inicial del nombre -->
+    <svg class="brand-logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="40 40 120 120">
+      <path d="M52 148 L100 50 L148 148" fill="none" stroke="#FFFFFF" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M60 130 L150 92" fill="none" stroke="#E4572E" stroke-width="10" stroke-linecap="round"/>
+      <polygon points="168,84 151,102 143,84" fill="#E4572E" stroke="#E4572E" stroke-width="4" stroke-linejoin="round"/>
+    </svg>
+    <!-- Texto conectando fluidamente con la A -->
+    <div class="brand-name">
+      <span class="text-ero">ero</span><span class="text-travel">Travel</span>
+    </div>
+  </div>
+  
+  <nav class="nav-links">
+    <a (click)="cambiarVista('inicio')" [class.active]="vistaActual === 'inicio'">Inicio</a>
+    <a (click)="cambiarVista('destinos')" [class.active]="vistaActual === 'destinos'">Destinos</a>
+  </nav>
+
+  <div class="nav-actions">
+    <button class="btn-nav" (click)="cambiarVista('inicio')">Acerca de</button>
+    <button class="btn-login" (click)="cambiarVista('login')">Iniciar Sesión</button>
+  </div>
+</header>
+
+<!-- ================= CONTENIDO DINÁMICO ================= -->
+<main class="main-content">
+
+  <!-- 1. VISTA DE INICIO -->
+  @if (vistaActual === 'inicio') {
+    <section class="hero-section">
+      <div class="hero-content">
+        <h1>Descubre el mundo con <span class="highlight">AeroTravel</span></h1>
+        <p>Encuentra los mejores vuelos al mejor precio y vive experiencias inolvidables.</p>
+        
+        <!-- Buscador de Vuelos -->
+        <div class="flight-search-box">
+          <div class="search-field">
+            <label>Origen</label>
+            <input type="text" placeholder="¿Desde dónde viajas?">
+          </div>
+          <div class="search-field">
+            <label>Destino</label>
+            <input type="text" placeholder="¿A dónde te diriges?">
+          </div>
+          <div class="search-field">
+            <label>Fecha</label>
+            <input type="date">
+          </div>
+          <button class="btn-search">
+  <!-- Icono SVG de lupa integrado con un avión -->
+  <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="11" cy="11" r="8"></circle>
+    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+  </svg>
+  Buscar Vuelos
+</button>
+        </div>
+      </div>
+    </section>
+  }
+
+  <!-- 2. VISTA DE LOGIN -->
+  @if (vistaActual === 'login') {
+    <section class="login-section">
+      <div class="login-card">
+        <div class="login-header">
+          <h2>Iniciar Sesión</h2>
+          <p>Ingrese sus credenciales en AeroTravel</p>
+        </div>
+        
+        <div class="login-form">
+          <div class="form-group">
+            <label for="usuario">Usuario</label>
+            <input type="text" id="usuario" placeholder="Ingrese su usuario">
+          </div>
+          
+          <div class="form-group">
+            <label for="clave">Clave</label>
+            <input type="password" id="clave" placeholder="Ingrese su contraseña">
+          </div>
+          
+          <button class="btn-aceptar" (click)="validarCredenciales()">Aceptar</button>
+        </div>
+      </div>
+    </section>
+  }
+
+  <!-- 3. VISTA DE DESTINOS -->
+  @if (vistaActual === 'destinos') {
+    <section class="destinations-section">
+      <h2>Destinos Populares</h2>
+      <p>Explora nuestras rutas más cotizadas para este año.</p>
+      <div class="destinations-grid">
+        <div class="dest-card"><h3>🇪🇨 Quito</h3><p>Cultura y volcanes andinos.</p></div>
+        <div class="dest-card"><h3>🇺🇸 Miami</h3><p>Playas y compras inolvidables.</p></div>
+        <div class="dest-card"><h3>🇪🇸 Madrid</h3><p>Historia y arte europeo.</p></div>
+      </div>
+    </section>
+  }
+
+</main>
+
+<!-- ================= PIE DE PÁGINA (COMPARTIDO) ================= -->
+<footer class="footer">
+  <p>&copy; 2026 AeroTravel. Todos los derechos reservados. Proyecto académico de Front-End.</p>
+</footer>

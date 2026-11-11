@@ -1,0 +1,407 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0b2545;
+  overflow-x: hidden;
+}
+
+app-root {
+  display: block;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  height: 70px;
+  background-color: #0b2545;
+  color: white;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  width: 100%;
+}
+
+/* Contenedor del Logotipo Unificado */
+.logo-container {
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+  cursor: pointer;
+  padding-bottom: 2px;
+}
+
+/* Tamaño de la A gráfica */
+.brand-logo-svg {
+  height: 38px;
+  width: 38px;
+}
+
+/* AQUÍ ESTÁ EL AJUSTE: Subimos el valor de margin-bottom para bajar un poco más el texto */
+.brand-name {
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  display: flex;
+  align-items: baseline;
+  line-height: 1;
+  margin-bottom: -1px; /* Aumentado de 3px a 7px para bajarlo un poco más */
+}
+
+.text-ero {
+  color: #FFFFFF !important;
+}
+
+.text-travel {
+  color: #E4572E !important;
+}
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #cbd5e1;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+  color: #E4572E;
+}
+
+.nav-actions {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.btn-nav {
+  background: transparent;
+  border: none;
+  color: #cbd5e1;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.btn-nav:hover {
+  color: #E4572E;
+}
+
+.btn-login {
+  background-color: #E4572E;
+  border: none;
+  color: white;
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-login:hover {
+  background-color: #c94621;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(rgba(11, 37, 69, 0.85), rgba(11, 37, 69, 0.75)), url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+  flex: 1;
+  min-height: calc(100vh - 120px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 30px 15px;
+  color: white;
+  width: 100%;
+}
+
+.hero-content {
+  max-width: 900px;
+  width: 100%;
+}
+
+.hero-content h1 {
+  font-size: 38px;
+  margin-bottom: 15px;
+}
+
+.highlight {
+  color: #E4572E;
+}
+
+.hero-content p {
+  font-size: 17px;
+  margin-bottom: 30px;
+  color: #cbd5e1;
+}
+
+/* Buscador de Vuelos ajustado para que el botón quepa en una sola línea */
+.flight-search-box {
+  background: #ffffff !important;
+  padding: 22px;
+  border-radius: 12px;
+  display: grid;
+  /* Cambiamos el ancho mínimo de las columnas para dar más espacio al botón */
+  grid-template-columns: repeat(3, minmax(150px, 1fr)) 170px;
+  gap: 15px;
+  align-items: flex-end;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+  color: #333;
+}
+
+.btn-search {
+  background-color: #E4572E;
+  color: white;
+  border: none;
+  padding: 12px 10px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 14px; /* Tamaño de letra optimizado */
+  cursor: pointer;
+  transition: background 0.3s;
+  width: 100%;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  white-space: nowrap; /* Evita que el texto salte de línea */
+}
+
+.search-field {
+  text-align: left;
+}
+
+.search-field label {
+  display: block;
+  font-size: 13px;
+  font-weight: bold;
+  color: #0b2545;
+  margin-bottom: 6px;
+}
+
+.search-field input {
+  width: 100%;
+  padding: 11px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 14px;
+  background-color: #f8fafc;
+  color: #0f172a;
+}
+
+.search-field input:focus {
+  outline: none;
+  border-color: #E4572E;
+  background-color: #ffffff;
+}
+
+.btn-search {
+  background-color: #E4572E;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+  width: 100%;
+  height: 44px;
+}
+
+.btn-search:hover {
+  background-color: #c94621;
+}
+
+/* Login Section */
+.login-section {
+  flex: 1;
+  min-height: calc(100vh - 120px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 15px;
+  background: linear-gradient(rgba(11, 37, 69, 0.05), rgba(11, 37, 69, 0.15));
+  width: 100%;
+}
+
+.login-card {
+  background: white;
+  padding: 35px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  width: 100%;
+  max-width: 400px;
+  border-top: 5px solid #E4572E;
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.login-header h2 {
+  color: #0b2545;
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+.login-header p {
+  color: #64748b;
+  font-size: 14px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 13px;
+  font-weight: bold;
+  color: #0b2545;
+  margin-bottom: 8px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.btn-aceptar {
+  width: 100%;
+  background-color: #0b2545;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-aceptar:hover {
+  background-color: #E4572E;
+}
+
+/* Destinos Section */
+.destinations-section {
+  flex: 1;
+  min-height: calc(100vh - 120px);
+  padding: 50px 20px;
+  text-align: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.destinations-section h2 {
+  color: white;
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.destinations-section p {
+  color: #cbd5e1;
+  margin-bottom: 40px;
+}
+
+.destinations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.dest-card {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  border-bottom: 4px solid #E4572E;
+  text-align: left;
+}
+
+.dest-card h3 {
+  color: #0b2545;
+  margin-bottom: 10px;
+}
+
+.dest-card p {
+  color: #64748b;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #0b2545;
+  color: #94a3b8;
+  font-size: 13px;
+  border-top: 1px solid #1e293b;
+  width: 100%;
+  height: 50px;
+}
+
+.btn-search {
+  background-color: #E4572E;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+  width: 100%;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px; /* Espacio limpio entre la lupa y el texto */
+}
+
+.btn-search:hover {
+  background-color: #c94621;
+}
+
+/* Tamaño y color del icono de búsqueda */
+.search-icon {
+  width: 18px;
+  height: 18px;
+  stroke: #ffffff;
+}
