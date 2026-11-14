@@ -1,0 +1,33 @@
+<section class="master-dashboard-section">
+  <div class="master-dashboard-container">
+    <div class="dashboard-hero-card">
+      <div class="welcome-text-group" style="display: flex; justify-content: space-between; align-items: center;">
+        <div>
+          <h2>Buscar Vuelos</h2>
+          <p>Encuentra las mejores opciones para tu próximo viaje.</p>
+        </div>
+        <button class="btn-uni-search" (click)="regresar()">← Volver al Panel</button>
+      </div>
+
+      <div class="unified-flight-bar">
+        <div class="uni-field"><label>Origen</label><input type="text" value="Quito (UIO)"></div>
+        <div class="uni-field"><label>Destino</label><input type="text" value="Madrid (MAD)"></div>
+        <div class="uni-field"><label>Fecha</label><input type="date" value="2026-12-15"></div>
+        <button class="btn-uni-search">Buscar</button>
+      </div>
+    </div>
+
+    <!-- Resultados de búsqueda simulados -->
+    <div class="quick-actions-section" style="margin-top: 20px;">
+      <h3 class="section-title-label">Resultados de Búsqueda</h3>
+      <div style="background: white; padding: 20px; border-radius: 10px; display: flex; justify-content: space-between; align-items: center; color: #0b2545;">
+        <div>
+          <strong>LATAM</strong> — UIO 10:20 ➔ MAD 05:50 (14h 30m • Escala: 1)
+        </div>
+        <div style="font-weight: bold; font-size: 20px; color: #E4572E;">$650 USD</div>
+        <button class="user-card-btn" style="width: auto; padding: 8px 20px;">Seleccionar</button>
+      </div>
+    </div>
+
+  </div>
+</section>

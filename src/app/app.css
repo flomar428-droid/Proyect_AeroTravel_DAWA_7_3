@@ -20,14 +20,7 @@ app-root {
   min-height: 100vh;
 }
 
-.app-container {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  width: 100%;
-}
-
-/* Navbar */
+/* ================= NAVBAR (ESTABLE Y ALINEADA) ================= */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -40,7 +33,6 @@ app-root {
   width: 100%;
 }
 
-/* Contenedor del Logotipo Unificado */
 .logo-container {
   display: flex;
   align-items: flex-end;
@@ -49,13 +41,16 @@ app-root {
   padding-bottom: 2px;
 }
 
-/* Tamaño de la A gráfica */
 .brand-logo-svg {
-  height: 38px;
-  width: 38px;
+  height: 38px !important;
+  width: 38px !important;
+  min-height: 38px !important;
+  min-width: 38px !important;
+  max-height: 38px !important;
+  max-width: 38px !important;
+  flex-shrink: 0;
 }
 
-/* AQUÍ ESTÁ EL AJUSTE: Subimos el valor de margin-bottom para bajar un poco más el texto */
 .brand-name {
   font-size: 26px;
   font-weight: 700;
@@ -63,7 +58,7 @@ app-root {
   display: flex;
   align-items: baseline;
   line-height: 1;
-  margin-bottom: -1px; /* Aumentado de 3px a 7px para bajarlo un poco más */
+  margin-bottom: -1px;
 }
 
 .text-ero {
@@ -77,6 +72,7 @@ app-root {
 .nav-links {
   display: flex;
   gap: 25px;
+  align-items: center;
 }
 
 .nav-links a {
@@ -85,6 +81,7 @@ app-root {
   font-weight: 500;
   cursor: pointer;
   transition: color 0.3s;
+  font-size: 15px;
 }
 
 .nav-links a:hover, .nav-links a.active {
@@ -126,6 +123,35 @@ app-root {
   background-color: #c94621;
 }
 
+/* ================= INDICADOR DE PERFIL EN NAVBAR ================= */
+.user-profile-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 7px 14px;
+  border-radius: 20px;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+
+.user-profile-badge:hover, .user-profile-badge.active-badge {
+  background-color: rgba(228, 87, 46, 0.2);
+  border-color: #E4572E;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #22c55e;
+  border-radius: 50%;
+  box-shadow: 0 0 6px #22c55e;
+}
+
 .main-content {
   flex: 1;
   display: flex;
@@ -133,7 +159,7 @@ app-root {
   width: 100%;
 }
 
-/* Hero Section */
+/* ================= HERO SECTION (PÚBLICA) ================= */
 .hero-section {
   background: linear-gradient(rgba(11, 37, 69, 0.85), rgba(11, 37, 69, 0.75)), url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
   flex: 1;
@@ -167,37 +193,17 @@ app-root {
   color: #cbd5e1;
 }
 
-/* Buscador de Vuelos ajustado para que el botón quepa en una sola línea */
+/* ================= BUSCADOR DE VUELOS (PÚBLICO) ================= */
 .flight-search-box {
   background: #ffffff !important;
   padding: 22px;
   border-radius: 12px;
   display: grid;
-  /* Cambiamos el ancho mínimo de las columnas para dar más espacio al botón */
   grid-template-columns: repeat(3, minmax(150px, 1fr)) 170px;
   gap: 15px;
   align-items: flex-end;
   box-shadow: 0 10px 25px rgba(0,0,0,0.4);
   color: #333;
-}
-
-.btn-search {
-  background-color: #E4572E;
-  color: white;
-  border: none;
-  padding: 12px 10px;
-  border-radius: 6px;
-  font-weight: bold;
-  font-size: 14px; /* Tamaño de letra optimizado */
-  cursor: pointer;
-  transition: background 0.3s;
-  width: 100%;
-  height: 44px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  white-space: nowrap; /* Evita que el texto salte de línea */
 }
 
 .search-field {
@@ -232,20 +238,32 @@ app-root {
   background-color: #E4572E;
   color: white;
   border: none;
-  padding: 12px;
+  padding: 12px 10px;
   border-radius: 6px;
   font-weight: bold;
+  font-size: 14px;
   cursor: pointer;
   transition: background 0.3s;
   width: 100%;
   height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  white-space: nowrap;
 }
 
 .btn-search:hover {
   background-color: #c94621;
 }
 
-/* Login Section */
+.search-icon {
+  width: 18px;
+  height: 18px;
+  stroke: #ffffff;
+}
+
+/* ================= LOGIN SECTION ================= */
 .login-section {
   flex: 1;
   min-height: calc(100vh - 120px);
@@ -303,6 +321,21 @@ app-root {
   font-size: 14px;
 }
 
+.text-exito {
+  color: #16a34a;
+}
+
+.text-error {
+  color: #E4572E;
+}
+
+.login-mensaje {
+  font-weight: bold;
+  font-size: 13px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
 .btn-aceptar {
   width: 100%;
   background-color: #0b2545;
@@ -320,53 +353,339 @@ app-root {
   background-color: #E4572E;
 }
 
-/* Destinos Section */
+/* ================= DESTINOS, OFERTAS Y COMBOS ================= */
 .destinations-section {
   flex: 1;
   min-height: calc(100vh - 120px);
   padding: 50px 20px;
   text-align: center;
-  max-width: 1000px;
+  max-width: 1100px;
   margin: 0 auto;
   width: 100%;
 }
 
+.dest-header {
+  margin-bottom: 40px;
+}
+
+.promo-tag {
+  display: inline-block;
+  background-color: rgba(228, 87, 46, 0.2);
+  color: #E4572E;
+  border: 1px solid #E4572E;
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
 .destinations-section h2 {
   color: white;
-  font-size: 32px;
+  font-size: 34px;
   margin-bottom: 10px;
 }
 
 .destinations-section p {
   color: #cbd5e1;
-  margin-bottom: 40px;
+  font-size: 16px;
 }
 
 .destinations-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
 }
 
 .dest-card {
   background: white;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  border-bottom: 4px solid #E4572E;
+  padding: 30px 25px;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  border-bottom: 5px solid #0b2545;
   text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.25s;
+}
+
+.dest-card:hover {
+  transform: translateY(-6px);
+}
+
+.featured-card {
+  border-bottom: 5px solid #E4572E;
+}
+
+.card-badge {
+  display: inline-block;
+  background-color: #e0f2fe;
+  color: #0b2545;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 5px 10px;
+  border-radius: 6px;
+  margin-bottom: 14px;
+  width: fit-content;
+}
+
+.orange-badge {
+  background-color: #ffedd5;
+  color: #c2410c;
 }
 
 .dest-card h3 {
   color: #0b2545;
+  font-size: 21px;
   margin-bottom: 10px;
 }
 
-.dest-card p {
+.dest-desc {
+  color: #475569 !important;
+  font-size: 14px !important;
+  line-height: 1.5;
+  margin-bottom: 20px !important;
+}
+
+.dest-price {
+  border-top: 1px solid #e2e8f0;
+  padding-top: 15px;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.old-price {
+  color: #94a3b8;
+  text-decoration: line-through;
+  font-size: 14px;
+}
+
+.current-price {
+  color: #0b2545;
+  font-size: 26px;
+  font-weight: 800;
+}
+
+.current-price small {
+  font-size: 13px;
+  font-weight: 500;
   color: #64748b;
 }
 
-/* Footer */
+.btn-combo {
+  background-color: #0b2545;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  width: 100%;
+  transition: background 0.3s;
+}
+
+.btn-combo:hover {
+  background-color: #E4572E;
+}
+
+/* ================= MASTER UNIFIED DASHBOARD STYLES (POST-LOGIN) ================= */
+.master-dashboard-section {
+  background: linear-gradient(rgba(11, 37, 69, 0.88), rgba(11, 37, 69, 0.82)), url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+  flex: 1;
+  min-height: calc(100vh - 120px);
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.master-dashboard-container {
+  max-width: 1100px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.dashboard-hero-card {
+  background: rgba(13, 39, 73, 0.92);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 14px;
+  padding: 30px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+.welcome-text-group {
+  margin-bottom: 22px;
+  text-align: left;
+}
+
+.welcome-text-group h2 {
+  color: white;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.welcome-text-group p {
+  color: #cbd5e1;
+  font-size: 14.5px;
+  margin: 0;
+}
+
+.unified-flight-bar {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(140px, 1fr)) 140px;
+  gap: 12px;
+  align-items: flex-end;
+  background: #ffffff;
+  padding: 16px;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+}
+
+.uni-field {
+  text-align: left;
+}
+
+.uni-field label {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  color: #0b2545;
+  margin-bottom: 5px;
+}
+
+.uni-field input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 13.5px;
+  background-color: #f8fafc;
+  color: #0f172a;
+}
+
+.uni-field input:focus {
+  outline: none;
+  border-color: #E4572E;
+  background-color: #ffffff;
+}
+
+.btn-uni-search {
+  background-color: #E4572E;
+  color: white;
+  border: none;
+  padding: 10px 12px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 13.5px;
+  cursor: pointer;
+  transition: background 0.3s;
+  height: 41px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.btn-uni-search:hover {
+  background-color: #c94621;
+}
+
+.quick-actions-section {
+  text-align: left;
+}
+
+.section-title-label {
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 18px;
+  letter-spacing: 0.3px;
+}
+
+.user-modules-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  width: 100%;
+}
+
+.user-module-card {
+  background: #ffffff;
+  padding: 24px 18px;
+  border-radius: 12px;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.user-module-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+}
+
+.user-card-icon-container {
+  width: 44px;
+  height: 44px;
+  background-color: #e0f2fe;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+  color: #0b2545;
+}
+
+.user-card-svg {
+  width: 20px;
+  height: 20px;
+}
+
+.user-module-card h4 {
+  color: #0b2545;
+  font-size: 15.5px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.user-module-card p {
+  color: #64748b;
+  font-size: 12px;
+  line-height: 1.4;
+  margin-bottom: 18px;
+}
+
+.user-card-btn {
+  background-color: #E4572E;
+  color: white;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  width: 90%;
+  transition: background 0.3s;
+}
+
+.user-card-btn:hover {
+  background-color: #c94621;
+}
+
+/* ================= FOOTER ================= */
 .footer {
   text-align: center;
   padding: 20px;
@@ -378,30 +697,18 @@ app-root {
   height: 50px;
 }
 
-.btn-search {
-  background-color: #E4572E;
-  color: white;
-  border: none;
-  padding: 12px 20px;
-  border-radius: 6px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background 0.3s;
-  width: 100%;
-  height: 44px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px; /* Espacio limpio entre la lupa y el texto */
+/* ================= RESPONSIVE ================= */
+@media (max-width: 992px) {
+  .unified-flight-bar {
+    grid-template-columns: 1fr;
+  }
+  .user-modules-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-.btn-search:hover {
-  background-color: #c94621;
-}
-
-/* Tamaño y color del icono de búsqueda */
-.search-icon {
-  width: 18px;
-  height: 18px;
-  stroke: #ffffff;
+@media (max-width: 550px) {
+  .user-modules-grid {
+    grid-template-columns: 1fr;
+  }
 }

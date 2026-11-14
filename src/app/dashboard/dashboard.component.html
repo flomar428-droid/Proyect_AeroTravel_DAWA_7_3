@@ -1,0 +1,84 @@
+<section class="master-dashboard-section">
+  <div class="master-dashboard-container">
+    
+    <!-- ENCABEZADO DE BIENVENIDA Y BUSCADOR UNIFICADO -->
+    <div class="dashboard-hero-card">
+      <div class="welcome-text-group">
+        <h2>Hola, <span class="highlight">{{ nombreUsuario }}</span></h2>
+        <p>Tu espacio personal de viajero. Gestiona tus itinerarios o busca tu próximo vuelo al instante.</p>
+      </div>
+
+      <div class="unified-flight-bar">
+        <div class="uni-field">
+          <label>Origen</label>
+          <input type="text" placeholder="¿Desde dónde viajas?">
+        </div>
+        <div class="uni-field">
+          <label>Destino</label>
+          <input type="text" placeholder="¿A dónde te diriges?">
+        </div>
+        <div class="uni-field">
+          <label>Fecha</label>
+          <input type="date">
+        </div>
+        <button class="btn-uni-search" (click)="irA('vuelos')">
+          <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          Buscar
+        </button>
+      </div>
+    </div>
+
+    <!-- SECCIÓN DE ACCIONES RÁPIDAS DEL PASAJERO -->
+    <div class="quick-actions-section">
+      <h3 class="section-title-label">Acciones Rápidas del Pasajero</h3>
+      
+      <div class="user-modules-grid">
+        
+        <!-- Módulo Vuelos -->
+        <div class="user-module-card" (click)="irA('vuelos')">
+          <div class="user-card-icon-container">
+            <svg class="user-card-svg" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
+          </div>
+          <h4>Mis Vuelos</h4>
+          <p>Consulta rutas y conexiones aéreas.</p>
+          <button class="user-card-btn">Gestionar</button>
+        </div>
+
+        <!-- Módulo Reservas -->
+        <div class="user-module-card" (click)="irA('reservas')">
+          <div class="user-card-icon-container">
+            <svg class="user-card-svg" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/></svg>
+          </div>
+          <h4>Mis Reservas</h4>
+          <p>Administra tiquetes y check-in.</p>
+          <button class="user-card-btn">Ver Reservas</button>
+        </div>
+
+        <!-- Módulo Promociones -->
+        <div class="user-module-card" (click)="irA('promociones')">
+          <div class="user-card-icon-container">
+            <svg class="user-card-svg" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h4>Promociones</h4>
+          <p>Ofertas exclusivas para socios.</p>
+          <button class="user-card-btn">Explorar</button>
+        </div>
+
+        <!-- Módulo Soporte -->
+        <div class="user-module-card" (click)="irA('soporte')">
+          <div class="user-card-icon-container">
+            <svg class="user-card-svg" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636l3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h4>Soporte</h4>
+          <p>Asistencia en aeropuertos 24/7.</p>
+          <button class="user-card-btn">Ayuda</button>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
