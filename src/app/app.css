@@ -10,15 +10,46 @@ html, body {
   padding: 0;
   width: 100%;
   height: 100%;
-  background-color: #0b2545;
   overflow-x: hidden;
+  box-sizing: border-box;
+  background-color: #0b2545;
 }
 
-app-root {
-  display: block;
-  width: 100%;
-  min-height: 100vh;
+*, *::before, *::after {
+  box-sizing: border-box;
 }
+
+/* ================= ESTRUCTURA GLOBAL UNIFICADA ================= */
+app-root {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+  width: 100%;
+  background: transparent !important; /* Deja ver el fondo global del body */
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-width: 0;
+  height: 100%;
+  background: transparent !important; /* Evita bloquear el fondo en páginas como Vuelos o Inicio */
+}
+
+.footer {
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+  background-color: #0b2545; /* El footer mantiene su color sólido definido */
+  color: #94a3b8;
+  font-size: 13px;
+  border-top: 1px solid #1e293b;
+  z-index: 10;
+  height: 50px;
+}
+
+/* Mantén aquí el resto de tus clases de la Navbar, Botones, etc. que ya tenías */
 
 /* ================= NAVBAR (ESTABLE Y ALINEADA) ================= */
 .navbar {
@@ -31,6 +62,7 @@ app-root {
   color: white;
   box-shadow: 0 2px 10px rgba(0,0,0,0.3);
   width: 100%;
+  z-index: 10;
 }
 
 .logo-container {
@@ -152,16 +184,9 @@ app-root {
   box-shadow: 0 0 6px #22c55e;
 }
 
-.main-content {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-
 /* ================= HERO SECTION (PÚBLICA) ================= */
 .hero-section {
-  background: linear-gradient(rgba(11, 37, 69, 0.85), rgba(11, 37, 69, 0.75)), url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+  background: transparent; /* Hereda el fondo unificado global */
   flex: 1;
   min-height: calc(100vh - 120px);
   display: flex;
@@ -271,7 +296,7 @@ app-root {
   justify-content: center;
   align-items: center;
   padding: 30px 15px;
-  background: linear-gradient(rgba(11, 37, 69, 0.05), rgba(11, 37, 69, 0.15));
+  background: transparent;
   width: 100%;
 }
 
@@ -495,7 +520,7 @@ app-root {
 
 /* ================= MASTER UNIFIED DASHBOARD STYLES (POST-LOGIN) ================= */
 .master-dashboard-section {
-  background: linear-gradient(rgba(11, 37, 69, 0.88), rgba(11, 37, 69, 0.82)), url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+  background: transparent;
   flex: 1;
   min-height: calc(100vh - 120px);
   padding: 40px 20px;
@@ -629,7 +654,7 @@ app-root {
   justify-content: space-between;
   align-items: center;
   text-align: center;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: transform 0.25s, box-shadow 0.25s;
 }
 
 .user-module-card:hover {
@@ -687,13 +712,14 @@ app-root {
 
 /* ================= FOOTER ================= */
 .footer {
+  width: 100%;
   text-align: center;
   padding: 20px;
   background-color: #0b2545;
   color: #94a3b8;
   font-size: 13px;
   border-top: 1px solid #1e293b;
-  width: 100%;
+  z-index: 10;
   height: 50px;
 }
 

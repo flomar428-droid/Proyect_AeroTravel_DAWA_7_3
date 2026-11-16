@@ -1,0 +1,35 @@
+<h2 mat-dialog-title>Editar Vuelo</h2>
+<mat-dialog-content>
+  <div class="form-container" style="display: flex; flex-direction: column; gap: 12px; padding-top: 10px;">
+    
+    <mat-form-field appearance="outline">
+      <mat-label>Código de Vuelo</mat-label>
+      <input matInput [(ngModel)]="vueloEditando.codigo" name="codigo">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Origen</mat-label>
+      <input matInput [(ngModel)]="vueloEditando.origen" name="origen">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Destino</mat-label>
+      <input matInput [(ngModel)]="vueloEditando.destino" name="destino">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Fecha</mat-label>
+      <input matInput [(ngModel)]="vueloEditando.fecha" name="fecha">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Estado</mat-label>
+      <input matInput [(ngModel)]="vueloEditando.estado" name="estado">
+    </mat-form-field>
+
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end" style="padding-bottom: 15px; padding-right: 15px;">
+  <button mat-button (click)="onNoClick()">Cancelar</button>
+  <button mat-raised-button color="primary" [mat-dialog-close]="vueloEditando">Guardar Cambios</button>
+</mat-dialog-actions>

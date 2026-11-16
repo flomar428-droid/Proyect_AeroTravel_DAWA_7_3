@@ -4,25 +4,31 @@
       <h2>Iniciar Sesión</h2>
       <p>Accede a tu cuenta de pasajero</p>
     </div>
-    
+
     <div class="login-form">
       <div class="form-group">
         <label for="usuario">Usuario / Pasajero</label>
-        <input type="text" id="usuario" [(ngModel)]="usuarioInput" placeholder="Ingrese su usuario">
+        <input type="text" id="usuario" [(ngModel)]="usuarioInput"
+          placeholder="Ingrese su usuario">
       </div>
-      
+
       <div class="form-group">
         <label for="clave">Contraseña</label>
-        <input type="password" id="clave" [(ngModel)]="claveInput" placeholder="Ingrese su contraseña">
+        <input type="password" id="clave" [(ngModel)]="claveInput"
+          placeholder="Ingrese su contraseña">
       </div>
 
       @if (mensajeLogin) {
-        <div [class.text-exito]="tipoMensaje === 'exito'" [class.text-error]="tipoMensaje === 'error'" class="login-mensaje">
-          {{ mensajeLogin }}
-        </div>
+      <div
+        [style.background-color]="tipoMensaje === 'error' ? 'rgba(180, 40, 40, 0.4)' : 'rgba(20, 80, 40, 0.4)'"
+        [style.border]="tipoMensaje === 'error' ? '1px solid #dc3545' : '1px solid #28a745'"
+        [style.color]="tipoMensaje === 'error' ? '#f8d7da' : '#d4edda'"
+        style="padding: 12px; border-radius: 6px; margin-bottom: 15px; font-size: 14px; text-align: center;">
+        {{ mensajeLogin }}
+      </div>
       }
-      
-      <button class="btn-aceptar" (click)="validarCredenciales()">Ingresar</button>
+
+      <button class="btn-aceptar" type="button" (click)="validarCredenciales()">Ingresar</button>
     </div>
   </div>
 </section>

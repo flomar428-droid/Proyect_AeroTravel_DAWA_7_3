@@ -1,0 +1,25 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  
+  /* Imagen de fondo unificada globalmente para toda la aplicación */
+  background: 
+    linear-gradient(rgba(11, 37, 69, 0.88), rgba(11, 37, 69, 0.82)), 
+    url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1920&q=80') no-repeat center center fixed !important;
+  background-size: cover !important;
+  background-color: #0b2545 !important;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Forzar un fondo sólido y opaco en las tarjetas de los módulos para evitar transparencias con el fondo general */
+.dashboard-hero-card {
+  background-color: #0d1b2a !important;
+}
